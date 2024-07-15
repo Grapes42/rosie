@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6bwbrgy7xml1"]
+[gd_scene load_steps=6 format=3 uid="uid://c6bwbrgy7xml1"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_h6h2v"]
 [ext_resource type="ArrayMesh" uid="uid://b6mxw0es5ydeu" path="res://assets/models/car/car_Cube_001.res" id="2_2id3c"]
-[ext_resource type="ArrayMesh" uid="uid://d2hs1mafxjnwm" path="res://assets/models/rpg/rpg.res" id="3_nlk2j"]
+[ext_resource type="ArrayMesh" uid="uid://ovqvygpnojfx" path="res://assets/models/rpg/rpg_Cylinder.res" id="3_ma473"]
+[ext_resource type="ArrayMesh" uid="uid://cgj5bumx54pwh" path="res://assets/models/rpg/rpg_Cylinder_002.res" id="4_l3phu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xfl3c"]
 size = Vector3(3.25439, 3.99902, 1.99951)
@@ -10,28 +11,35 @@ size = Vector3(3.25439, 3.99902, 1.99951)
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_h6h2v")
 
-[node name="TwistPivot" type="Node3D" parent="."]
+[node name="CameraYaw" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+[node name="CameraPitch" type="Node3D" parent="CameraYaw"]
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+[node name="Camera3D" type="Camera3D" parent="CameraYaw/CameraPitch"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="MeshPitch" type="Node3D" parent="."]
 
 [node name="MeshRoll" type="Node3D" parent="MeshPitch"]
 
-[node name="RosieMesh" type="MeshInstance3D" parent="MeshPitch/MeshRoll"]
+[node name="MeshYaw" type="Node3D" parent="MeshPitch/MeshRoll"]
+
+[node name="RosieMesh" type="MeshInstance3D" parent="MeshPitch/MeshRoll/MeshYaw"]
 transform = Transform3D(-3.49691e-08, 0, 0.5, 0, 0.5, 0, -0.8, 0, -2.18557e-08, 0, 0, 0)
 mesh = ExtResource("2_2id3c")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="RPGMesh" type="MeshInstance3D" parent="MeshPitch/MeshRoll"]
+[node name="RPGMesh" type="MeshInstance3D" parent="MeshPitch/MeshRoll/MeshYaw"]
 transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0.907252, -0.887414)
-mesh = ExtResource("3_nlk2j")
+mesh = ExtResource("3_ma473")
 skeleton = NodePath("../RosieMesh")
+
+[node name="ProjectileMesh" type="MeshInstance3D" parent="MeshPitch/MeshRoll/MeshYaw"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0.907252, -1.59402)
+mesh = ExtResource("4_l3phu")
+skeleton = NodePath("../RPGMesh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-3.49691e-08, 0, 0.5, 0, 0.5, 0, -0.8, 0, -2.18557e-08, 0.00476073, -0.490479, -0.231055)
