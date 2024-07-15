@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdvbfoj08mx57"
-path.s3tc="res://.godot/imported/car_car_body_scaled.png-32c7dd4e7eb97f38e50ef596a091c03d.s3tc.ctex"
+uid="uid://baf64k6nejamp"
+path.s3tc="res://.godot/imported/car_rosie_face_scaled.jpg-b5990a252d4d3766e29e487792b4843f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a80c9c2c844c540d69c324c551524210"
+"md5": "3d9b44aa814c865b908f3798e0e9a206"
 }
 
 [deps]
 
-source_file="res://assets/models/car_car_body_scaled.png"
-dest_files=["res://.godot/imported/car_car_body_scaled.png-32c7dd4e7eb97f38e50ef596a091c03d.s3tc.ctex"]
+source_file="res://assets/models/car/car_rosie_face_scaled.jpg"
+dest_files=["res://.godot/imported/car_rosie_face_scaled.jpg-b5990a252d4d3766e29e487792b4843f.s3tc.ctex"]
 
 [params]
 

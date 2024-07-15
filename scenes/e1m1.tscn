@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://f2fg5fm25twv"]
+[gd_scene load_steps=63 format=3 uid="uid://f2fg5fm25twv"]
 
 [ext_resource type="PackedScene" uid="uid://b6fal230s6kdt" path="res://assets/level_models/doom_e1m1.glb" id="1_d4qwy"]
 [ext_resource type="PackedScene" uid="uid://c6bwbrgy7xml1" path="res://scenes/player.tscn" id="2_8gnj6"]
@@ -173,6 +173,19 @@ data = PackedVector3Array(-1792, 2240, 95.9991, -1984, 2303.98, 95.9991, -1984, 
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ui2sw"]
 data = PackedVector3Array(-2240, 4096, -24, -2368, 3968, -24, -2240, 3968, -24, -2240, 4096, -24, -2368, 4096, -24, -2368, 3968, -24, -3200, 3744, 32, -3328, 3968, 32, -3328, 3744, 32, -3200, 3744, 32, -3200, 3968, 32, -3328, 3968, 32)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bqq63"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_7hnfk"]
+sky_material = SubResource("ProceduralSkyMaterial_bqq63")
+
+[sub_resource type="Environment" id="Environment_e503k"]
+background_mode = 2
+sky = SubResource("Sky_7hnfk")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_d4qwy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3000)
@@ -467,3 +480,6 @@ shape = SubResource("ConcavePolygonShape3D_ui2sw")
 
 [node name="CharacterBody3D" parent="." index="1" instance=ExtResource("2_8gnj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.1595, 13.6722, -2964.93)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
+environment = SubResource("Environment_e503k")

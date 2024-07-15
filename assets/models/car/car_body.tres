@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://blbtf8bacwauh"]
 
-[ext_resource type="Texture2D" uid="uid://bdvbfoj08mx57" path="res://assets/models/car_car_body_scaled.png" id="1_ixv3a"]
+[ext_resource type="Texture2D" uid="uid://bdvbfoj08mx57" path="res://assets/models/car/car_car_body_scaled.png" id="1_ixv3a"]
 
 [resource]
 resource_name = "car_body"

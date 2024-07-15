@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvdorhf60bcg5"
-path="res://.godot/imported/test_floor.glb-5468f2292ea832f279afb9072973797a.scn"
+uid="uid://cgpq5kjxf125n"
+path="res://.godot/imported/car.glb-1a75098d9fbb93935df311018d7de87f.scn"
 
 [deps]
 
-source_file="res://assets/models/test_floor.glb"
-dest_files=["res://.godot/imported/test_floor.glb-5468f2292ea832f279afb9072973797a.scn"]
+source_file="res://assets/models/car/car.glb"
+dest_files=["res://.godot/imported/car.glb-1a75098d9fbb93935df311018d7de87f.scn"]
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="player"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
@@ -30,8 +30,18 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
+"materials": {
+"car_body": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/car_body.tres"
+},
+"car_face": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/car_face.tres"
+}
+},
 "meshes": {
-"test_floor_Plane": {
+"car_Cube_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +49,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://assets/models/test_floor_Plane.res"
+"save_to_file/path": "res://assets/models/car_Cube_001.res"
 }
 }
 }
